@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngIf="errMsg" class="error">
+    {{ errMsg }}
+  </div>
+  <div *ngIf="htmlContent" class="html-content">
+    <iframe [srcdoc]="htmlContent" frameborder="0" class="preview"></iframe>
+  </div>
+</div>
