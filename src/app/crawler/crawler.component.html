@@ -1,16 +1,19 @@
-<div class="header">
-  <h1>Welcome to BBC.COM Crawler</h1>
-</div>
 <div class="container">
-  <div *ngIf="errMsg" class="error">
-    {{ errMsg }}
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
   </div>
 
-  <div *ngIf="!htmlContent">
-    <button (click)="fetchData()" class="fetch-data">Click Me</button>
+
+  <button (click)="fetchAndParse()" class="fetch-button">Fetch Data</button>
+
+  <div *ngIf="headersWithExplanations.length > 0" class="content">
+    <div *ngFor="let item of headersWithExplanations" class="item">
+      <h2>{{ item.header }}</h2>
+      <p>{{ item.explanation }}</p>
+    </div>
   </div>
-  <div *ngIf="htmlContent" class="html-content">
-    <iframe [srcdoc]="htmlContent" frameborder="0" class="preview"></iframe>
+
+  <div *ngIf="headersWithExplanations.length === 0 && !errorMessage">
+    No content available.
   </div>
 </div>
-
