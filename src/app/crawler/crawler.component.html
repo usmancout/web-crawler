@@ -1,6 +1,13 @@
+<div class="header">
+  <h1>Welcome to BBC.COM Crawler</h1>
+</div>
 <div class="container">
   <div *ngIf="errMsg" class="error">
     {{ errMsg }}
+  </div>
+
+  <div *ngIf="!htmlContent">
+    <button (click)="fetchData()" class="fetch-data">Click Me</button>
   </div>
   <div *ngIf="htmlContent" class="html-content">
     <iframe [srcdoc]="htmlContent" frameborder="0" class="preview"></iframe>

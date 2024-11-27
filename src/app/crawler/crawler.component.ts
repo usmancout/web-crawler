@@ -17,7 +17,7 @@ export class CrawlerComponent implements OnInit {
 
   constructor(private crawlerService: CrawlerService) {}
 
-  ngOnInit(): void {
+  fetchData (){
     this.crawlerService.fetchPage().subscribe({
       next: (response) => {
         this.htmlContent = response;
@@ -26,5 +26,8 @@ export class CrawlerComponent implements OnInit {
         this.errMsg = 'Error fetching data';
       }
     });
+  }
+
+  ngOnInit(): void {
   }
 }
