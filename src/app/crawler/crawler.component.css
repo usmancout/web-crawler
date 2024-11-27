@@ -1,0 +1,44 @@
+
+iframe.preview {
+  width: 100%;
+  height: 500px;
+}
+
+/* General Container Styling */
+.container {
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f7fc;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Error Message Styling */
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* HTML Content Container Styling */
+.html-content {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+
+
