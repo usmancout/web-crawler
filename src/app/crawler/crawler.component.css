@@ -3,7 +3,6 @@
   background-color: #121212; /* Dark background */
   color: #ffffff; /* Light text */
   padding: 20px;
-
   font-family: Arial, sans-serif;
 }
 
@@ -29,16 +28,27 @@
 
 .result-item {
   margin-bottom: 20px;
+  padding: 10px; /* Add padding for a cleaner look */
+  border-radius: 8px; /* Rounded corners for the colored box */
+  background-color: #1e1e1e; /* Slightly lighter background for contrast */
 }
 
 .header {
   font-size: 1.5em;
   font-weight: bold;
+  padding: 10px;
+  margin: 0;
+  background-color: #4caf50; /* Green background for the header box */
+  color: #ffffff; /* White text for contrast */
+  border-radius: 5px 5px 0 0; /* Rounded corners on the top */
 }
 
 .explanation {
   font-size: 1em;
   color: #dddddd;
+  padding: 10px;
+  background-color: #333333; /* Darker gray background for the explanation */
+  border-radius: 0 0 5px 5px; /* Rounded corners on the bottom */
 }
 
 .error {
@@ -49,4 +59,33 @@
 .no-data {
   color: #bbbbbb;
   font-style: italic;
+}
+
+.download-button {
+  background-color: #ffff00; /* Yellow background */
+  color: #000000; /* Black text */
+  padding: 12px 24px; /* Space around text */
+  text-align: center; /* Center-align text */
+  font-size: 16px; /* Font size */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s ease-in-out; /* Smooth transitions for hover effect */
+}
+
+.download-button:hover {
+  background-color: #ffd400; /* Darker yellow on hover */
+  transform: translateY(-2px); /* Button moves up slightly */
+}
+
+/* Active effect when the button is clicked */
+.download-button:active {
+  transform: translateY(1px); /* Button moves down slightly */
+  background-color: #c7a500; /* Even darker yellow when clicked */
+}
+
+/* Focus effect for accessibility */
+.download-button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(255, 223, 0, 0.8); /* Glow effect around button */
 }

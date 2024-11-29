@@ -3,17 +3,19 @@
     {{ errorMessage }}
   </div>
 
-
   <button (click)="fetchAndParse()" class="fetch-button">Fetch Data</button>
 
-  <div *ngIf="headersWithExplanations.length > 0" class="content">
-    <div *ngFor="let item of headersWithExplanations" class="item">
+  <div *ngIf="headerExplanation.length > 0" class="content">
+    <div *ngFor="let item of headerExplanation" class="item">
       <h2>{{ item.header }}</h2>
-      <p>{{ item.explanation }}</p>
+      <p *ngIf="item.explanation">{{ item.explanation }}</p>
     </div>
   </div>
 
-  <div *ngIf="headersWithExplanations.length === 0 && !errorMessage">
-    No content available.
+  <div *ngIf="headerExplanation.length === 0 && !errorMessage">
+    Press Button to fetch data
   </div>
+
+  <!-- Download Button -->
+  <button *ngIf="headerExplanation.length > 0" (click)="downloadData()" class="download-button">Download</button>
 </div>
