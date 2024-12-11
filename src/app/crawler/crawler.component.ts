@@ -38,9 +38,8 @@ export class CrawlerComponent implements OnInit {
       this.headerExplanation = [];
       const seenHeaders = new Set();
 
-      headers.each((index, headerElement) => {
+      headers.each((_, headerElement) => { // Remove the index parameter
         const headerText = $(headerElement).text().trim();
-
 
         if (seenHeaders.has(headerText)) {
           console.log('Skipping duplicate header:', headerText);
@@ -60,7 +59,7 @@ export class CrawlerComponent implements OnInit {
           const container = $(headerElement).closest('section, article');
           if (container.length) {
 
-            // @ts-ignore
+            // @ts-expect-error
             container.find('p').each((_, paragraph) => {
               const text = $(paragraph).text().trim();
 
@@ -78,16 +77,15 @@ export class CrawlerComponent implements OnInit {
           console.log('No explanation available for header:', headerText);
         }
 
-
         this.headerExplanation.push({
           header: headerText,
           explanation: explanation,
         });
 
-
         seenHeaders.add(headerText);
         seenHeaders.add(explanation);
       });
+
 
       console.log('Extracted headers and explanations:', this.headerExplanation);
     } catch (error) {

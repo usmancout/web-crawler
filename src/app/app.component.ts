@@ -10,5 +10,4 @@ import {CrawlerComponent} from './crawler/crawler.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'WebCrawler';
 }
