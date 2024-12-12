@@ -16,10 +16,8 @@ export class CrawlerComponent implements OnInit {
 
   constructor(private crawlerService: CrawlerService) {
   }
-
   ngOnInit(): void {
   }
-
   fetchAndParse(): void {
     this.crawlerService.fetchPage().subscribe({
       next: (response) => {
@@ -30,14 +28,12 @@ export class CrawlerComponent implements OnInit {
       },
     });
   }
-
   extractHeadersAndDescription(html: string): void {
     try {
       const $ = cheerio.load(html);
       const headers = $('h1, h2, h3');
       this.headerExplanation = [];
       const seenHeaders = new Set();
-
       headers.each((_, headerElement) => { // Remove the index parameter
         const headerText = $(headerElement).text().trim();
 
@@ -45,7 +41,6 @@ export class CrawlerComponent implements OnInit {
           console.log('Skipping duplicate header:', headerText);
           return;
         }
-
         let explanation = '';
         console.log('Processing header:', headerText);
 
@@ -85,8 +80,6 @@ export class CrawlerComponent implements OnInit {
         seenHeaders.add(headerText);
         seenHeaders.add(explanation);
       });
-
-
       console.log('Extracted headers and explanations:', this.headerExplanation);
     } catch (error) {
       console.error('Error parsing HTML:', error);
